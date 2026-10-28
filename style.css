@@ -1,0 +1,233 @@
+:root {
+  --primary: #FF8C42;
+  --primary-hover: #E67E22;
+  --red: #E74C3C;
+  --green: #008000;
+  --dark: #1E1E1E;
+  --bg: #111111;
+  --gray: #444444;
+  --gray-hover: #555555;
+  --chip: #666666;
+  --chip-hover: #888888;
+  --font: "Ebbe", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: #fff;
+  font-family: var(--font);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+#app {
+  width: min(800px, 100%);
+  min-height: min(700px, 100vh);
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* ---------- МЕНЮ ---------- */
+.menu-card {
+  width: 100%;
+  margin: 0;
+  background: var(--dark);
+  border: 3px solid var(--primary);
+  border-radius: 12px;
+  padding: 40px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(40px, 8vw, 64px);
+  font-weight: bold;
+  margin: 0 0 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.menu-btn {
+  width: min(320px, 90%);
+  height: 60px;
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+/* ---------- ОБЩИЕ КНОПКИ ---------- */
+.btn {
+  font-family: var(--font);
+  font-size: 18px;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  background: var(--gray);
+  min-height: 50px;
+  transition: background 0.15s ease;
+}
+
+.btn:hover:not(:disabled) { background: var(--gray-hover); }
+.btn:disabled { cursor: default; }
+
+.btn.primary { background: var(--primary); }
+.btn.primary:hover:not(:disabled) { background: var(--primary-hover); }
+
+.btn.gray { background: var(--gray); }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.row.spaced { margin-top: 40px; }
+
+.action-btn { width: 140px; height: 50px; font-size: 18px; }
+.action-btn.wide { width: 160px; }
+.back-btn { width: 240px; min-height: 50px; font-size: 18px; }
+.back-btn.small { width: 110px; font-size: 16px; }
+.back-spaced { margin-top: 30px; }
+.next-btn { width: 200px; font-size: 18px; margin-top: 10px; }
+
+/* ---------- КАРТОЧКИ ---------- */
+.word-label {
+  font-size: clamp(48px, 12vw, 96px);
+  font-weight: bold;
+  text-align: center;
+  margin: 60px 0 40px;
+  overflow-wrap: anywhere;
+}
+
+.translation-label {
+  font-size: clamp(28px, 6vw, 40px);
+  color: #FFCC99;
+  text-align: center;
+  min-height: 1.2em;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- ВИКТОРИНА ---------- */
+.quiz-word-label {
+  font-size: clamp(32px, 7vw, 48px);
+  text-align: center;
+  white-space: pre-line;
+  margin: 50px 0 40px;
+  overflow-wrap: anywhere;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quiz-option {
+  width: min(400px, 90%);
+  height: 50px;
+  margin: 8px 0;
+  border-radius: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quiz-option.correct { background: var(--green); }
+.quiz-option.wrong { background: var(--red); }
+
+/* ---------- СОСТАВЬ ПРЕДЛОЖЕНИЕ ---------- */
+.sentence-target-label {
+  font-size: clamp(20px, 4vw, 24px);
+  text-align: center;
+  white-space: pre-line;
+  margin: 20px 0;
+}
+
+.sentence-box {
+  background: #222222;
+  border-radius: 8px;
+  width: min(720px, 90%);
+  min-height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.chip {
+  font-family: var(--font);
+  font-size: 18px;
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip-pool { background: var(--chip); }
+.chip-pool:hover { background: var(--chip-hover); }
+
+.chip-answer { background: #333333; font-weight: bold; }
+.chip-answer:hover { background: #444444; }
+
+/* ---------- СПРАВОЧНИК ---------- */
+.grammar-text {
+  font-size: clamp(16px, 3.5vw, 20px);
+  white-space: pre-line;
+  text-align: left;
+  margin: 60px 40px 0;
+  line-height: 1.5;
+}
+
+/* ---------- СЛОВАРЬ ---------- */
+.dict-text {
+  width: min(600px, 90%);
+  height: 400px;
+  overflow-y: auto;
+  background: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .screen { padding: 15px; }
+  .menu-card { border-width: 2px; }
+  .row.spaced { margin-top: 20px; }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- МЕНЮ -->
+    <section id="screen-menu" class="screen">
+      <div class="menu-card">
+        <h1 class="title">Deutsch Trainer</h1>
+        <button id="btn-flashcards" class="btn primary menu-btn">Карточки слов</button>
+        <button id="btn-quiz" class="btn primary menu-btn">Викторина</button>
+        <button id="btn-sentence" class="btn primary menu-btn">Составь предложение</button>
+        <button id="btn-grammar" class="btn primary menu-btn">Справочник: Артикли</button>
+        <button id="btn-dictionary" class="btn primary menu-btn">Словарь</button>
+      </div>
+    </section>
+
+    <!-- КАРТОЧКИ СЛОВ -->
+    <section id="screen-flashcards" class="screen" hidden>
+      <div id="word-label" class="word-label"></div>
+      <div id="translation-label" class="translation-label"></div>
+      <div class="row spaced">
+        <button id="btn-show-translation" class="btn gray action-btn">Перевод</button>
+        <button id="btn-next-card" class="btn gray action-btn">Дальше</button>
+        <button id="btn-back-flashcards" class="btn primary back-btn">← В меню</button>
+      </div>
+    </section>
+
+    <!-- ВИКТОРИНА -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div id="quiz-word-label" class="quiz-word-label"></div>
+      <div class="quiz-options">
+        <button class="btn gray quiz-option" data-index="0"></button>
+        <button class="btn gray quiz-option" data-index="1"></button>
+        <button class="btn gray quiz-option" data-index="2"></button>
+        <button class="btn gray quiz-option" data-index="3"></button>
+      </div>
+      <button id="btn-back-quiz" class="btn primary back-btn back-spaced">← В меню</button>
+    </section>
+
+    <!-- СОСТАВЬ ПРЕДЛОЖЕНИЕ -->
+    <section id="screen-sentence" class="screen" hidden>
+      <div id="sentence-target-label" class="sentence-target-label">Соберите предложение:</div>
+      <div id="sentence-container" class="sentence-box"></div>
+      <div class="row spaced">
+        <button id="btn-check-sentence" class="btn primary action-btn wide">Проверить</button>
+        <button id="btn-undo" class="btn gray action-btn wide">↩ Отмена</button>
+      </div>
+      <button id="btn-next-sentence" class="btn gray next-btn">Следующее</button>
+      <button id="btn-back-sentence" class="btn primary back-btn back-spaced">← В меню</button>
+    </section>
+
+    <!-- СПРАВОЧНИК -->
+    <section id="screen-grammar" class="screen" hidden>
+      <div class="grammar-text">Артикли в немецком языке:
+
+der — мужской род (Maskulinum)
+die — женский род (Femininum)
+das — средний род (Neutrum)</div>
+      <button id="btn-back-grammar" class="btn primary back-btn back-spaced">← В меню</button>
+    </section>
+
+    <!-- СЛОВАРЬ -->
+    <section id="screen-dictionary" class="screen" hidden>
+      <div id="dict-text" class="dict-text"></div>
+      <button id="btn-back-dictionary" class="btn primary back-btn back-spaced">← В меню</button>
+    </section>
+
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
